@@ -41,12 +41,10 @@ spec:
             - name: sickchill
               containerPort: 8081
               protocol: TCP
-          securityContext:
-            runAsUser: {{ .Values.securityContext.runAsUser }}
-            runAsGroup: {{ .Values.securityContext.runAsGroup }}
-            fsGroup: {{ .Values.securityContext.fsGroup }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+      securityContext:
+{{ toYaml .Values.securityContext | indent 8 }}
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
