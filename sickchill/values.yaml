@@ -60,6 +60,6 @@ tolerations: []
 affinity: {}
 
 securityContext:
-  # runAsUser: 1000
-  # runAsGroup: 1000
-  fsGroup: 1000
+  # runAsUser: 65534
+  # runAsGroup: 100
+  # fsGroup: 100
